@@ -96,7 +96,7 @@ void insere_ordenado(lista_processo *lista, tipo_processo proceso){
     if (verifica_vazia(lista)) {
         insere_inicio(lista, proceso);
         } if (verifica_cheia(lista)){
-                printf("ERRO:operação nao permitida!\nLista cheia\n\n");
+                printf("ERRO: operacao nao permitida!\nLista cheia\n\n");
             }else {
         cursor indice_atual, prox_indice;
         indice_atual = lista->primeiro;
@@ -121,7 +121,7 @@ void retira_primeiro(lista_processo *lista){
     cursor aux;
     
     if (verifica_vazia(lista) == 1){
-        printf("ERRO:operação nao permitida!\nLista vazia\n\n");
+        printf("ERRO: opercao nao permitida!\nLista vazia\n\n");
     }
     else{
         // Temos que fazer o proximo da primeira celula como a variavel auxiliar, e o anterior deste ser a nova primeira celula disponivel
@@ -144,7 +144,7 @@ void retira_primeiro(lista_processo *lista){
 
 void imprime_lista(lista_processo *lista){
         if (verifica_vazia(lista) == 1){
-        printf("ERRO:Lista vazia!");
+        printf("\nLista vazia!\n\n");
     } else {
         printf("\nLista de Processos ordenada:\n\n");
         cursor indice_atual;
