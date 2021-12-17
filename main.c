@@ -91,7 +91,7 @@ void opera_lista(int tam_vetor, int num_teste, int qntd_de_operacoes, int *tipo_
             } 
             imprime_lista(lista_teste);
         }
-            else {
+        else {
 
                 printf("ERRO: Operacao invalida!");
             }
