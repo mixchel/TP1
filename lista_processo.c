@@ -11,12 +11,15 @@ int verifica_vazia(lista_processo *lista){
 
 int verifica_cheia(lista_processo *lista){
     if (lista->num_cel_ocupadas == sizeof(lista->vetor)/(sizeof(lista->vetor[0]))){
-    // if (lista->num_cel_vazias == 0) {
         return 1;
     }
     else{
         return 0;
     }
+}
+
+int cel_ocupadas(lista_processo *lista){
+    return lista->num_cel_ocupadas;
 }
 
 void cria_lista(lista_processo *lista, int n_max){

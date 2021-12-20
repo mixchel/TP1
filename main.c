@@ -15,6 +15,7 @@ int main() {
     printf("Qual formato de entrada de dados? Arquivo (a) ou Terminal (t):\n");
     scanf("%s", &tipo_da_entrada);
 
+    //Entrada via terminal
     if (tipo_da_entrada == 't') {
 
         printf("Entre com o numero do teste:\n");
@@ -28,7 +29,8 @@ int main() {
 
         opera_lista(tam_vetor, num_teste, ops_por_terminal, tipo_de_operacao, reps_da_operacao);
         
-    } else if (tipo_da_entrada == 'a'){
+        //Leitura de arquivo
+    } else if (tipo_da_entrada == 'a'){                                      
 
         printf("Entre com o nome do arquivo:\n");
         scanf("%s", nome_arquivo);
@@ -59,12 +61,13 @@ int main() {
     return 0;
 }
 
-
+//Funcao para fazer, sequencialmente, varias operacoes em uma lista 
 void opera_lista(int tam_vetor, int num_teste, int qntd_de_operacoes, int *tipo_de_operacao, int *reps_da_operacao){
 
     lista_processo *lista_teste;
     lista_teste = (lista_processo*) malloc(sizeof(lista_processo));
     cria_lista(lista_teste, tam_vetor);
+    printf("Numero de celulas criadas: %d\n\n", cel_ocupadas(lista_teste));
 
     FILE *ptrarquivo_saida;
     ptrarquivo_saida = fopen("saida.txt","w");
@@ -81,14 +84,16 @@ void opera_lista(int tam_vetor, int num_teste, int qntd_de_operacoes, int *tipo_
                 processo_teste = initprocesso();
                 insere_ordenado(lista_teste, *processo_teste);
             }
+            printf("Numero de celulas ocupadas depois das insercoes: %d\n\n", cel_ocupadas(lista_teste));
             imprime_lista(lista_teste);
         }
         else if (tipo_de_operacao[i] == 1) {
-
+            printf("Numero de celulas ocupadas antes das remocoes: %d\n\n", cel_ocupadas(lista_teste));
             for (int j = 0; j < reps_da_operacao[i]; ++j) {
 
                 retira_primeiro(lista_teste);
             } 
+            printf("Numero de celulas ocupadas depois das remocoes: %d\n\n", cel_ocupadas(lista_teste));
             imprime_lista(lista_teste);
         }
         else {
