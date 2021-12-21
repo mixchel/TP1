@@ -106,4 +106,5 @@ void opera_lista(int tam_vetor, int num_teste, int qntd_de_operacoes, int *tipo_
         fprintf(ptrarquivo_saida, "Teste %d: %lf segundos\n\n", num_teste+i, tempo_diferenca);
     }
     fclose(ptrarquivo_saida);
+    printf("\nTeste concluido!\n");
 }
